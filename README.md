@@ -2,7 +2,7 @@
 
 This blogsite is part of a capstone project in Dr. Angela Yu's web dev bootcamp.
 
-As of now this site will have all the basic CRUD operations which a blog should have and i will more features later on as i progress further in the bootcamp and expand my knowledge on other topics.
+As of now this site will have all the basic CRUD operations which a blog should have and i will add more features later on as i progress further in the bootcamp and expand my knowledge on other topics.
 
 The tech stack for this project is:-
 
