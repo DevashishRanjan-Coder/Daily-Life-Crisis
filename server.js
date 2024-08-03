@@ -15,7 +15,7 @@ app.use(bodyParser.json());
 app.get("/", async (req, res) => {
     try {
         const response = await axios.get(`${API_URL}/view-posts`);
-        console.log(response);
+        //console.log(response);
         res.render("index.ejs", { posts: response.data });
     } catch (error) {
         res.status(500).json({ message: "Error fetching posts" });
@@ -46,7 +46,7 @@ app.get("/edit/:id", async (req, res) => {
 app.post("/api/posts", async (req, res) => {
     try {
         const response = await axios.post(`${API_URL}/create-posts`, req.body);
-        console.log(response.data);
+        //console.log(response.data);
         res.redirect("/");
     } catch (error) {
         res.status(500).json({ message: "Error creating post" });
@@ -61,7 +61,7 @@ app.post("/api/posts/:id", async (req, res) => {
             `${API_URL}/update-posts/${req.params.id}`,
             req.body
         );
-        console.log(response.data);
+        //console.log(response.data);
         res.redirect("/");
     } catch (error) {
         res.status(500).json({ message: "Error updating post" });
