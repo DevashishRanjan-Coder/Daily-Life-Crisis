@@ -1,0 +1,95 @@
+<%# EJS template for the landing page %>
+
+    <%- include("partials/header.ejs") %>
+
+        <body>
+            <div class="headSection">
+                <h1 class="pt-serif-bold-italic">The Daily Life Crisis</h1>
+                <a id="newPostBtn" href="/addPost"> <svg width="64px" height="64px" viewBox="0 0 1024 1024" class="icon"
+                        version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#000000">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <path d="M512 512m-448 0a448 448 0 1 0 896 0 448 448 0 1 0-896 0Z" fill="#00ff00"></path>
+                            <path d="M448 298.666667h128v426.666666h-128z" fill="#FFFFFF"></path>
+                            <path d="M298.666667 448h426.666666v128H298.666667z" fill="#FFFFFF"></path>
+                        </g>
+                    </svg></a>
+            </div>
+            <div>
+                <ul class="blogContent">
+                    <% posts.forEach(post=> { %>
+                        <li class="cards">
+                            <h2 class="pt-serif-bold-italic">
+                                <%=post.title%>
+                            </h2>
+                            <small>
+                                <%=post.date %>
+                            </small>
+                            <p class="pt-serif-regular">
+                                <%=post.content%>
+                            </p>
+                            <small>By: <%=post.author%> </small>
+                            <div class="userOperationsPosition">
+                                <div class="userOperations">
+                                    <a class="edit" href="/edit/<%= post.id %>">
+                                        <svg width="64px" height="64px" viewBox="0 0 24 24" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round"
+                                                stroke-linejoin="round">
+                                            </g>
+                                            <g id="SVGRepo_iconCarrier">
+                                                <path d="M4 5L15 5" stroke="#0000ff" stroke-width="0.696"
+                                                    stroke-linecap="round" stroke-linejoin="round"></path>
+                                                <path d="M4 8H15" stroke="#0000ff" stroke-width="0.696"
+                                                    stroke-linecap="round" stroke-linejoin="round"></path>
+                                                <path d="M4 11H11" stroke="#0000ff" stroke-width="0.696"
+                                                    stroke-linecap="round" stroke-linejoin="round"></path>
+                                                <path
+                                                    d="M18.4563 13.5423L13.9268 18.0719C13.6476 18.3511 13.292 18.5414 12.9048 18.6188L10.8153 19.0367L11.2332 16.9472C11.3106 16.5601 11.5009 16.2045 11.7801 15.9253L16.3096 11.3957M18.4563 13.5423L19.585 12.4135C19.9755 12.023 19.9755 11.3898 19.585 10.9993L18.8526 10.2669C18.4621 9.8764 17.8289 9.8764 17.4384 10.2669L16.3096 11.3957M18.4563 13.5423L16.3096 11.3957"
+                                                    stroke="#0000ff" stroke-width="0.696" stroke-linecap="round"
+                                                    stroke-linejoin="round"></path>
+                                            </g>
+                                        </svg> </a>
+                                    <% if(posts.length===1){%>
+                                        <p>
+                                            Cannot delete the last post
+                                        </p>
+                                        <% } else{%>
+
+                                            <a class="delete" href="/delete/<%= post.id %>">
+
+                                                <svg width="64px" height="64px" viewBox="-102.4 -102.4 1228.80 1228.80"
+                                                    class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                                    fill="#000000" stroke="#000000" stroke-width="0.01024">
+                                                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round"
+                                                        stroke-linejoin="round" stroke="#CCCCCC" stroke-width="8.192">
+                                                    </g>
+                                                    <g id="SVGRepo_iconCarrier">
+                                                        <path
+                                                            d="M672.768 832.512c12.8 0 23.552-9.216 23.552-20.48V413.184h-46.592v398.848c-0.512 11.264 9.728 20.48 23.04 20.48z"
+                                                            fill="#ff0000"></path>
+                                                        <path
+                                                            d="M511.488 832.512c13.312 0 23.04-9.216 23.04-20.48V413.184h-46.592v398.848c0 11.264 10.752 20.48 23.552 20.48z"
+                                                            fill="#ff0000"></path>
+                                                        <path
+                                                            d="M350.208 832.512c12.8 0 23.04-9.216 23.04-20.48V413.184h-46.08v398.848c0 11.264 10.752 20.48 23.04 20.48z"
+                                                            fill="#ff0000"></path>
+                                                        <path
+                                                            d="M921.088 182.272h-191.488V98.816c0-18.944-17.408-34.304-38.912-34.304h-358.4c-21.504 0-38.912 15.872-39.424 34.304v83.968H102.4c-21.504 0-38.912 15.36-38.912 34.304V378.88c0 18.944 17.408 34.304 38.912 34.304h57.344v512.512c0 18.944 16.896 34.304 38.4 34.304h626.688c21.504 0 38.912-15.872 38.912-34.304V413.184h57.344c20.992 0 38.4-15.36 38.4-34.304V216.576c0-18.432-17.408-34.304-38.4-34.304zM370.688 133.12h281.088v43.008H370.688V133.12z m414.72 758.272H237.056V413.184H785.92v478.208z m96.256-546.816H140.8V251.392h740.864v93.184z"
+                                                            fill="#ff0000"></path>
+                                                    </g>
+                                                </svg>
+                                            </a>
+                                            <%}%>
+                                </div>
+                            </div>
+                        </li>
+                        <% }); %>
+                </ul>
+            </div>
+        </body>
+
+        </html>

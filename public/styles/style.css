@@ -1,0 +1,153 @@
+body {
+  background-color: black;
+}
+
+svg {
+  height: 40px;
+  width: 30px;
+}
+
+.headSection {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+h1,
+h2 {
+  color: #ffed00;
+  text-shadow: 1px 1px 2px #ffed00;
+  padding-left: 5px;
+}
+
+p,
+small {
+  color: #16ff00;
+  padding-left: 5px;
+}
+
+.blogContent {
+  list-style-type: none;
+  padding-top: 20px;
+  display: grid;
+  grid-template: repeat(3, 1fr) / auto;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.cards {
+  height: auto;
+  width: 700px;
+  border: 2px solid #0f6292;
+  box-shadow: 10px 5px 5px rgba(15, 98, 146, 0.5);
+  border-radius: 30px;
+}
+
+small {
+  padding-left: 9px;
+  padding-bottom: 9px;
+  display: inline;
+}
+
+.userOperationsPosition {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.userOperations {
+  display: flex;
+  flex-direction: row;
+  text-decoration: none;
+}
+
+.create-editForm {
+  height: 400px;
+  width: 500px;
+  display: grid;
+  grid-template: auto 1fr / 1fr;
+  padding-top: 30px;
+  padding-left: 35%;
+}
+
+.editForm {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: space-between;
+  border: 2px solid #0f6292;
+  box-shadow: 10px 5px 5px rgba(15, 98, 146, 0.5);
+
+  border-radius: 30px;
+}
+
+.updateSection {
+  display: flex;
+  flex-direction: row;
+  gap: 240px;
+  padding-right: 5px;
+  padding-left: 5px;
+  padding-bottom: 3px;
+}
+
+.postTitle {
+  margin-top: 8px;
+  margin-left: 8px;
+  width: 300px;
+  border-radius: 30px;
+  text-align: center;
+}
+
+.postAuthor {
+  text-align: center;
+  margin-top: 5px;
+  margin-left: 2px;
+  border-radius: 30px;
+}
+
+.createPostBtn {
+  border-style: none;
+  background-color: transparent;
+  padding-left: 30px;
+}
+
+#newPostBtn:hover {
+  filter: drop-shadow(0 0 20px #16ff00);
+}
+
+.edit:hover {
+  filter: drop-shadow(5px 5px 5px #4d4dff);
+}
+
+.delete:hover {
+  filter: drop-shadow(5px 5px 5px red);
+}
+
+.createPostBtn:hover {
+  filter: drop-shadow(5px 5px 5px #16ff00);
+}
+
+.pt-serif-regular {
+  font-family: "PT Serif", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.pt-serif-regular-italic,
+small {
+  font-family: "PT Serif", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.pt-serif-bold-italic {
+  font-family: "PT Serif", serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.pt-serif-bold {
+  font-family: "PT Serif", serif;
+  font-weight: 700;
+  font-style: normal;
+}
