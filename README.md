@@ -12,3 +12,6 @@ The tech stack for this project is:-
 4. Express.js for the server
 5. Node.js as the runtime env.
 6. Javascript as the programming language
+
+The blog is hosted on Render - https://daily-life-crisis.onrender.com/
+(This is a free instance so according to render there will be a 50 sec delay)
